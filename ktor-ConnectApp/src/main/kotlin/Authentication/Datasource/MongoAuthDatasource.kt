@@ -6,7 +6,7 @@ import org.litote.kmongo.coroutine.CoroutineDatabase
 import org.litote.kmongo.eq
 
 class MongoAuthDatasource(
-    val db : CoroutineDatabase
+   private val db : CoroutineDatabase
 ) : AuthDataSource{
     val users = db.getCollection<User>()
     override suspend fun getUserByName(username : String): User? {
