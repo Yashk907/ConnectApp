@@ -1,4 +1,5 @@
-
+val kmongo_version : String by project
+val koin_version : String by project
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ktor)
@@ -20,6 +21,16 @@ repositories {
 }
 
 dependencies {
+    implementation("org.litote.kmongo:kmongo:$kmongo_version")
+    implementation("org.litote.kmongo:kmongo-coroutine:$kmongo_version")
+
+    // Koin core features
+    implementation("io.insert-koin:koin-ktor:3.4.0") // Or the latest compatible version
+    implementation("io.ktor:ktor-server-core:2.3.0")
+
+    //hashing
+    implementation("commons-codec:commons-codec:1.15")
+
     implementation(libs.koin.ktor)
     implementation(libs.koin.logger.slf4j)
     implementation(libs.ktor.server.content.negotiation)

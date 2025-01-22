@@ -18,8 +18,6 @@ import org.koin.logger.slf4jLogger
 
 fun Application.configureRouting() {
     routing {
-        get("/") {
-            call.respondText("Hello World!")
-        }
+
     }
 }
